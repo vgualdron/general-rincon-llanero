@@ -43,14 +43,12 @@ try {
               $result2 = $sql2->execute();
               $postId = $conexion->lastInsertId();
           }
-          $input['id'] = $postId;
           $input['mensaje'] = "Cambios gurdados con éxito";
           header("HTTP/1.1 200 OK");
           echo json_encode($input);
           exit();
           
   	  } else {
-        $input['id'] = $postId;
         $input['mensaje'] = "Error eliminando";
         header("HTTP/1.1 400 Bad Request");
         echo json_encode($input);

@@ -105,13 +105,11 @@ try {
       $sql->bindValue(5, $id);
       $result = $sql->execute();
       if($result) {
-        $input['id'] = $postId;
         $input['mensaje'] = "Registrado con éxito";
         header("HTTP/1.1 200 OK");
         echo json_encode($input);
         exit();
   	  } else {
-        $input['id'] = $postId;
         $input['mensaje'] = "Error modificando marca";
         header("HTTP/1.1 400 Bad Request");
         echo json_encode($input);
@@ -134,13 +132,11 @@ try {
       $sql->bindValue(1, $id);
       $result = $sql->execute();
       if($result) {
-        $input['id'] = $postId;
         $input['mensaje'] = "Eliminado con éxito";
         header("HTTP/1.1 200 OK");
         echo json_encode($input);
         exit();
   	  } else {
-        $input['id'] = $postId;
         $input['mensaje'] = "Error eliminando marca";
         header("HTTP/1.1 400 Bad Request");
         echo json_encode($input);
